@@ -294,11 +294,13 @@ CREATE INDEX doc_chunks_file_id_idx ON doc_chunks(file_id);
 
 ### Entregables
 
-- [ ] Repositorio inicializado con estructura de directorios, dependencias, y Makefile
-- [ ] Supabase configurado con las tres tablas (`source_files`, `code_chunks`, `doc_chunks`), índices HNSW, GIN, y auxiliares
-- [ ] MCP server que arranca, conecta a Supabase, y responde health check
-- [ ] Logger JSONL configurado
-- [ ] README con instrucciones de setup local
+- [x] Repositorio inicializado con estructura de directorios, dependencias, y Makefile
+- [x] Supabase configurado con las tres tablas (`source_files`, `code_chunks`, `doc_chunks`), índices HNSW, GIN, y auxiliares
+- [x] MCP server que arranca, conecta a Supabase, y responde health check
+- [x] Logger JSONL configurado (loguru)
+- [x] README con instrucciones de setup local
+- [x] Pre-commit hooks configurados (ruff, detect-secrets, validaciones generales)
+- [x] Conectividad validada: Supabase, Voyage AI, OpenAI (GPT-5.4 nano)
 
 ### Riesgos
 
@@ -310,9 +312,10 @@ CREATE INDEX doc_chunks_file_id_idx ON doc_chunks(file_id);
 
 ### Dependencias
 
-- Cuenta en Supabase (gratuita)
-- API key de Voyage AI (free tier: 200M tokens por modelo)
-- API key de Anthropic (para Niveles 2 y 3, pero configurar ahora)
+- Cuenta en Supabase (gratuita) ✓
+- API key de Voyage AI (free tier: 200M tokens por modelo) ✓
+- API key de OpenAI (prepago, modelo principal: GPT-5.4 nano para desarrollo) ✓
+- API key de Anthropic (opcional, para comparar calidad en fases posteriores)
 
 ---
 
