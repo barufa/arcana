@@ -1,4 +1,4 @@
-.PHONY: install test lint format serve setup-corpus validate-corpus index reindex eval
+.PHONY: install test lint format serve setup-corpus validate-corpus preview-chunks index reindex eval
 
 install:
 	uv sync --all-extras
@@ -21,6 +21,9 @@ setup-corpus:
 
 validate-corpus:
 	uv run python -m scripts.validate_corpus
+
+preview-chunks:
+	uv run python -m scripts.preview_chunks $(FILE)
 
 # Targets para fases futuras
 index:

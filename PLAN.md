@@ -372,10 +372,10 @@ Reunir, organizar y validar el corpus que alimentará el indexing pipeline. Prod
 
 ### Entregables
 
-- [ ] Corpus organizado en `data/corpus/` con estructura consistente
-- [ ] Manifiesto `manifest.yaml` con inventario completo
-- [ ] Estimación real de tokens por índice (usando tokenizer de Voyage AI)
-- [ ] Documento de decisiones sobre inclusiones/exclusiones
+- [x] Corpus organizado en `data/corpus/` con estructura consistente
+- [x] Manifiesto `manifest.yaml` con inventario completo
+- [x] Estimación real de tokens por índice (usando tokenizer de Voyage AI)
+- [x] Documento de decisiones sobre inclusiones/exclusiones
 
 ### Riesgos
 
