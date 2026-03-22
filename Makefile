@@ -1,4 +1,4 @@
-.PHONY: install test lint format serve index reindex eval
+.PHONY: install test lint format serve setup-corpus validate-corpus index reindex eval
 
 install:
 	uv sync --all-extras
@@ -15,6 +15,12 @@ format:
 
 serve:
 	uv run python -m src.mcp.server
+
+setup-corpus:
+	uv run python -m scripts.setup_corpus
+
+validate-corpus:
+	uv run python -m scripts.validate_corpus
 
 # Targets para fases futuras
 index:

@@ -1,0 +1,96 @@
+# Corpus Manifest — Arcana Internal Knowledge MCP Server
+# Generated: 2026-03-22
+# Purpose: Inventory of all indexed content for the RAG experiment
+
+libraries:
+  - name: fastmcp
+    version: "3.1.1"
+    language: python
+    description: >
+      FastMCP is a Python framework for building MCP (Model Context Protocol) servers.
+      Provides decorators for tools, resources, and prompts with built-in auth, CLI, and client support.
+    source: "pip install fastmcp==3.1.1 + GitHub repo (jlowin/fastmcp)"
+
+    code:
+      path: "data/corpus/fastmcp/code/"
+      language: python
+      file_count: 339
+      total_lines: 69261
+      modules:
+        - name: server
+          description: "FastMCP server, context, dependencies, auth, sampling, providers"
+        - name: client
+          description: "MCP client implementation"
+        - name: cli
+          description: "Command-line interface (run, inspect, install, generate)"
+        - name: tools
+          description: "Tool definitions, transforms, and utilities"
+        - name: resources
+          description: "Resource and resource template handling"
+        - name: prompts
+          description: "Prompt management"
+        - name: utilities
+          description: "OpenAPI parser, JSON schema types, logging, UI"
+        - name: contrib
+          description: "Community contributed extensions"
+        - name: experimental
+          description: "Experimental features"
+        - name: examples
+          description: "Usage examples: apps, auth, config, filesystem, echo, memory, etc."
+
+    docs:
+      path: "data/corpus/fastmcp/docs/"
+      format: "mdx (markdown + JSX, parseable as markdown)"
+      file_count: 442
+      total_lines: 80910
+      sections:
+        - name: getting-started
+          description: "Installation, quickstart, tutorials"
+        - name: servers
+          description: "Server configuration, tools, resources, prompts, context"
+        - name: clients
+          description: "Client usage, auth, sampling, notifications"
+        - name: cli
+          description: "CLI reference"
+        - name: deployment
+          description: "Deployment guides"
+        - name: patterns
+          description: "Design patterns and best practices"
+        - name: apps
+          description: "Application development"
+        - name: tutorials
+          description: "Step-by-step tutorials"
+        - name: changelog
+          description: "Version history and breaking changes"
+        - name: v2
+          description: "Legacy v2 documentation"
+        - name: v3-notes
+          description: "Internal design notes for v3 architecture decisions"
+
+    exclusions:
+      - pattern: "tests/"
+        reason: "Tests excluded from indexing — may add curated integration tests as examples later"
+      - pattern: "__pycache__/"
+        reason: "Compiled bytecode, not source"
+      - pattern: "py.typed"
+        reason: "PEP 561 marker file, no content"
+      - pattern: "docs/assets/"
+        reason: "Images and static assets, not indexable text"
+      - pattern: "docs/css/"
+        reason: "Stylesheets, not documentation content"
+      - pattern: "docs/public/"
+        reason: "Static assets for docs site"
+      - pattern: "docs/snippets/"
+        reason: "Reusable doc fragments — content appears in main docs"
+
+    token_estimates:
+      # Real counts from Voyage AI tokenizer (2026-03-22, updated with examples + v3-notes)
+      code_tokens: 516901   # Voyage Code 3 (0.26% of 200M free tier)
+      doc_tokens: 819926    # Voyage 3.5 (0.41% of 200M free tier)
+      total_tokens: 1336827
+
+notes:
+  - "FastMCP is used as the initial corpus to validate the indexing pipeline"
+  - "A private/synthetic library will be created later for the actual RAG experiment"
+  - "C++ support will be added in a future iteration"
+  - "MDX files are treated as markdown — JSX components are ignored during parsing"

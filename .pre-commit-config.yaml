@@ -4,6 +4,7 @@ repos:
     hooks:
       - id: check-added-large-files
         args: [--maxkb=500]
+        exclude: '^data/corpus/.*\.zip$'
       - id: check-merge-conflict
       - id: check-yaml
       - id: check-toml
