@@ -493,8 +493,8 @@ Construir el pipeline completo que transforma código y documentación en chunks
 
 ### Entregables
 
-- [ ] Pipeline de chunking de código funcional con tree-sitter (edge cases cubiertos)
-- [ ] Pipeline de chunking de docs funcional con mistune
+- [x] Pipeline de chunking de código funcional con tree-sitter (edge cases cubiertos)
+- [x] Pipeline de chunking de docs funcional con mistune
 - [ ] Pipeline de extracción de proposiciones con LLM y prompt versioning
 - [ ] Cliente de embeddings Voyage AI con batching, retry, y `input_type` correcto
 - [ ] Carga completa del corpus en Supabase con FKs a `source_files`
